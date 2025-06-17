@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-nginx-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-nginx
+  template:
+    metadata:
+      labels:
+        app: node-nginx
+    spec:
+      containers:
+      - name: node-nginx-con
+        image: swiwdocker build -t yashlodhi123/dashboard-app:latest .
+/react-docker-app:latest
+        ports:
+        - containerPort: 80
